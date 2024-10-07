@@ -1,0 +1,33 @@
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka/
+security:
+    jwt:
+        expiration-time: 86400000
+        secret-key: 2D4A614E645267556B58703233357638792F413F4428472B4B6250655368566D
+
+server:
+    port: 8005
+
+spring:
+    application:
+        name: POKEMON-AUTH-SERVER
+    datasource:
+        password: postgres
+        testWhileIdle: true
+        url: jdbc:postgresql://localhost:5432/postgres?useSSL=false
+        username: postgres
+        validationQuery: SELECT 1
+    devtools:
+        restart:
+            enabled: true
+
+    jpa:
+        hibernate:
+            ddl-auto: update
+            naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: true
